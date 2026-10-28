@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <style>
+        * {box-sizing: border-box; margin: 0;}
+        body {font-family: sans-serif ;}
+
+        /*FLEXBOX: Menu en fila*/
+        nav {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 2rem;
+            background: #222;
+            color: white;
+        }
+
+        .benefits {
+            padding: 4rem 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .benefits h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+        }
+
+        .card .icon {
+            font-size: 2.5rem;
+        }
+
+        .card h3 {
+            margin: 0.5rem 0;
+        }
+
+
+        /*SECCION HERO: centrado con flexbox*/
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            gap: 1rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, #4f46e5, #9333ea);
+            color: white;
+        }
+        .hero h1 {
+            font-size: clamp(2rem, 6vw, 4rem);
+        }
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 500px;
+        }
+
+        .btn {
+            background: white;
+            color: #4f46e5;
+            padding: 0.8rem 1.8rem;
+            border-radius: 999px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.2s;
+        }
+        .btn:hover {
+            transform: scale(1.08);
+        }
+
+        .contact {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .contact h2 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        form{
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #4f46e5;
+        }
+
+        form button {
+            background: #4f46e5;
+            color: white;
+            border: none;
+            padding: 0.9rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background: #3730a3;
+        }
+
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <h1>Aprende a aconstruir la web</h1>
+        <p>Proyectos reales, paso a paso, desde cero.</p>
+        <a href="#" class="btn">Empezar ahora</a>
+    </section>
+    <nav>
+        <strong>Mi marca</strong>
+        <span>Inicio | Contacto</span>
+    </nav>
+
+    <section class="benefits">
+        <h2>¿Porque elegirnos?</h2>
+        <div class="cards">
+            <div class="card">
+                <div class="icon">⚡︎</div>
+                <h3>Rapido</h3>
+                <p>Carga en segundos.</p>
+            </div>
+            <div class="card">
+                <div class="icon">📲</div>
+                <h3>Responsive</h3>
+                <p>Se ve bien en cualquier pantalla.</p>
+            </div>
+            <div class="card">
+                <div class="icon">🎨</div>
+                <h3>Moderno</h3>
+                <p>Diseño limpio y actual.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact">
+        <h2>Contactanos</h2>
+        <form id="contactForm">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" required>
+
+            <label for="email">Correo</label>
+            <input type="email" id="email" required>
+
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" rows="4" required></textarea>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2026 Mi Marca. Todos los derechos reservados. </p>
+    </footer>
+
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", (e) => {
+            e.preventDefault();
+            alert("Gracias por escribirnos!");
+            e.target.reset();
+        });
+    </script>
+</body>
+</html>
